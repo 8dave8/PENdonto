@@ -145,6 +145,8 @@ GameObject:
   - component: {fileID: 8946714774428316152}
   - component: {fileID: 4361291689826000940}
   - component: {fileID: 4361291689826000937}
+  - component: {fileID: 8677010654585466807}
+  - component: {fileID: 8723689642533837917}
   - component: {fileID: 4361291689826000945}
   m_Layer: 0
   m_Name: Character2
@@ -269,6 +271,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14415368, y: 0.30389237}
   m_EdgeRadius: 0.07
+--- !u!114 &8677010654585466807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361291689826000935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1de6965cc6b0ea4b9c254db814d8237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 0}
+--- !u!114 &8723689642533837917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361291689826000935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fe6204e962c2b4a913ee4418ba56ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  FullHearth: {fileID: 0}
+  EmptyHearth: {fileID: 0}
+  hearth1: {fileID: 0}
+  hearth2: {fileID: 0}
+  hearth3: {fileID: 0}
 --- !u!58 &4361291689826000945
 CircleCollider2D:
   m_ObjectHideFlags: 0
