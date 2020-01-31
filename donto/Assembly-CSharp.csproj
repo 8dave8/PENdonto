@@ -47,6 +47,7 @@
   <ItemGroup>     <Compile Include="Assets\Sripts\attackController.cs" />
      <Compile Include="Assets\Sripts\BarrelScript.cs" />
      <Compile Include="Assets\Sripts\Buttonfunctions.cs" />
+     <Compile Include="Assets\Sripts\ButtonPress.cs" />
      <Compile Include="Assets\Sripts\CharacterController.cs" />
      <Compile Include="Assets\Sripts\CoinJumper.cs" />
      <Compile Include="Assets\Sripts\DestroyOverTime.cs" />
@@ -57,6 +58,7 @@
      <Compile Include="Assets\Sripts\PickupController.cs" />
      <Compile Include="Assets\Sripts\PlayerMovement.cs" />
      <Compile Include="Assets\Sripts\ToNextMapScript.cs" />
+     <None Include="Assets\player_anims\asd.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Unity Projects/donto/PENdonto/donto/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

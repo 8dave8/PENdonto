@@ -13,4 +13,12 @@ public class Buttonfunctions : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void SetCoins()
+    {
+        PlayerPrefs.SetInt("coins", 100);
+    }
+    public void Resume()
+    {
+        Time.timeScale = 1;
+    }
 }

@@ -52,7 +52,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Enemy1Move
-  m_Speed: 0.4
+  m_Speed: 0.8
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -64,7 +64,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4ef3e88eec26513418b2c3d5e005e609, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2a04e23750338434095636b49077bdc9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

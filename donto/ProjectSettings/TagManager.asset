@@ -7,6 +7,9 @@ TagManager:
   - Barrel
   - sword
   - Coin
+  - Enemy
+  - Hearth
+  - checkpoint
   layers:
   - Default
   - TransparentFX

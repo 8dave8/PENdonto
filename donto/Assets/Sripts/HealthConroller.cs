@@ -7,40 +7,83 @@ using UnityEngine.UI;
 
 public class HealthConroller : MonoBehaviour
 {
+    private int savedHP;
+    private GameObject spawnPont;
+    public Sprite on;
+    public GameObject Save;
     public Rigidbody2D rb;
     public Sprite FullHearth;
     public Sprite EmptyHearth;
-    public GameObject hearth1;
-    public GameObject hearth2;
-    public GameObject hearth3;
+    //public GameObject hearth1;
+    //public GameObject hearth2;
+    //public GameObject hearth3;
+
+    public GameObject[] hearts;
+    int maxHealth = 5;
     private static int health;
     private System.Random rng = new System.Random();
     private bool takingDamage = false;
     void Start()
     {
+        //spawnPont.transform.position = transform.position;
+        maxHealth = hearts.Length;
+        rb.GetComponent<Rigidbody2D>();
         Physics.IgnoreLayerCollision(11,9);
-        health = 3;
+        health = maxHealth;
+
+        // DEBUG
+        for (int i = 0; i < 2; i++) takeDamage();
+
+        /*for (int i = 0; i < 2; i++)
+        {
+            addHealth();
+        }*/
     }
     public void takeDamage()
     {
         health--;
-        if (health == 2) hearth3.GetComponent<Image>().sprite = EmptyHearth;
+        hearts[health].GetComponent<Image>().sprite = EmptyHearth;
+
+        if(health <= 0)
+        {
+            Debug.Log("Halál:" + health); 
+            Death();
+        }
+
+
+        /*if (health == 2) hearth3.GetComponent<Image>().sprite = EmptyHearth;
         else if (health == 1) hearth2.GetComponent<Image>().sprite = EmptyHearth;
         else if (health == 0) hearth1.GetComponent<Image>().sprite = EmptyHearth;
-        if (health <= 0) Death();
+        if (health <= 0) Death();*/
     }
     public void addHealth()
     {
-        if(health <= 0) Death();
+        if(health != maxHealth){
+            hearts[health].GetComponent<Image>().sprite = FullHearth;
+            health++;
+        }
+
+        /*if(health <= 0) Death();
         if(health != 3) health++;
 
         if(health == 3) hearth3.GetComponent<Image>().sprite = FullHearth;
-        else if(health == 2) hearth2.GetComponent<Image>().sprite = FullHearth;
+        else if(health == 2) hearth2.GetComponent<Image>().sprite = FullHearth;*/
     }
     void OnTriggerStay2D(Collider2D col)
     {   
         if (col.gameObject.tag == "Enemy" && gameObject.layer == 0 || col.gameObject.tag == "Spike")
             gotHit();      
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "checkpoint" && spawnPont != col.gameObject)
+        {
+            
+                spawnPont = col.gameObject;
+                Save.SetActive(true);
+                Time.timeScale = 0;
+            
+        }
     }
     IEnumerator wait()
     {
@@ -62,6 +105,19 @@ public class HealthConroller : MonoBehaviour
     }
     private void Death()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if(spawnPont == null) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        else{
+            transform.position = spawnPont.transform.position;
+            for (int i = 0; i < savedHP; i++)  addHealth();
+        }
+    }
+    public void mentes()
+    {
+        spawnPont.GetComponentInChildren<SpriteRenderer>().sprite = on;
+        Save.SetActive(false);
+        takeDamage();
+        savedHP = health;
+        spawnPont.transform.position = transform.position;
+        Time.timeScale = 1;
     }
 }
