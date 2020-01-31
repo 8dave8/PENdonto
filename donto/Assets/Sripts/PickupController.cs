@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PickupController : MonoBehaviour
 {
+    public GameObject buymenu;
     public Text coinText;
     private bool colliding;
     void Start()
@@ -38,7 +39,16 @@ public class PickupController : MonoBehaviour
             StartCoroutine("wait");
             GetComponent<HealthConroller>().addHealth();
         }
+        
     }
+    void OnTriggerEnter2D(Collider2D col)
+        {
+            if(col.gameObject.tag == "cukrosbacsi")
+            {
+                buymenu.SetActive(true);
+                Time.timeScale = 0;
+            }
+        }
     IEnumerator wait()
     {
         yield return new WaitForSeconds(0.01f);

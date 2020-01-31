@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Hearth
   - checkpoint
+  - cukrosbacsi
   layers:
   - Default
   - TransparentFX

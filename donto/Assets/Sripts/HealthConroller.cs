@@ -120,4 +120,14 @@ public class HealthConroller : MonoBehaviour
         spawnPont.transform.position = transform.position;
         Time.timeScale = 1;
     }
+    public void Buyhealth()
+    {
+        if(PlayerPrefs.GetInt("coins") >= 10)
+        {   
+            addHealth();
+            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") -10);
+            GetComponent<PickupController>().coinText.text = PlayerPrefs.GetInt("coins").ToString("000");
+        }
+        Time.timeScale = 1;
+    }
 }

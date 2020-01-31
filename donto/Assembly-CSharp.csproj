@@ -56,9 +56,10 @@
      <Compile Include="Assets\Sripts\JumpController.cs" />
      <Compile Include="Assets\Sripts\MoveSide2side.cs" />
      <Compile Include="Assets\Sripts\PickupController.cs" />
+     <Compile Include="Assets\Sripts\platformController.cs" />
      <Compile Include="Assets\Sripts\PlayerMovement.cs" />
      <Compile Include="Assets\Sripts\ToNextMapScript.cs" />
-     <None Include="Assets\player_anims\asd.txt" />
+     <None Include="Assets\Textures\player_anims\asd.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Unity Projects/donto/PENdonto/donto/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
