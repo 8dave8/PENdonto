@@ -16,12 +16,14 @@ namespace UnityStandardAssets.CrossPlatformInput
         public void SetDownState()
         {
             CrossPlatformInputManager.SetButtonDown(Name);
+            Debug.Log("down");
         }
 
 
         public void SetUpState()
         {
             CrossPlatformInputManager.SetButtonUp(Name);
+            Debug.Log("up");
         }
 
 
