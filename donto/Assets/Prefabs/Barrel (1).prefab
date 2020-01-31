@@ -68,7 +68,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 81e66184a44344a49848ee4c672c37ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -153,4 +153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 8580578325093679370, guid: 910942c57b32d9749aa5e069d774864a,
     type: 3}
-  Coins: []
+  Coins:
+  - {fileID: 1856659161059189362, guid: 055423126fd6eed429c787ee7a5dd057, type: 3}
+  - {fileID: 1856659161059189362, guid: 14d4b9f3db93b454a949a63cbf45f6c2, type: 3}

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class HealthConroller : MonoBehaviour
 {
     private int savedHP;
+    private GameObject last;
     private GameObject spawnPont;
     public Sprite on;
     public GameObject Save;
@@ -42,13 +43,12 @@ public class HealthConroller : MonoBehaviour
     public void takeDamage()
     {
         health--;
-        hearts[health].GetComponent<Image>().sprite = EmptyHearth;
-
         if(health <= 0)
         {
-            Debug.Log("Halál:" + health); 
             Death();
+            return;
         }
+        hearts[health].GetComponent<Image>().sprite = EmptyHearth;
 
 
         /*if (health == 2) hearth3.GetComponent<Image>().sprite = EmptyHearth;
@@ -71,19 +71,18 @@ public class HealthConroller : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D col)
     {   
-        if (col.gameObject.tag == "Enemy" && gameObject.layer == 0 || col.gameObject.tag == "Spike")
+        if ((col.gameObject.tag == "Enemy" && gameObject.layer == 0) || col.gameObject.tag == "Spike")
             gotHit();      
     }
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.tag == "checkpoint" && spawnPont != col.gameObject)
         {
-            
-                spawnPont = col.gameObject;
+                last = col.gameObject;
                 Save.SetActive(true);
                 Time.timeScale = 0;
-            
         }
+        if(col.gameObject.tag == "instakill") Death();
     }
     IEnumerator wait()
     {
@@ -113,12 +112,18 @@ public class HealthConroller : MonoBehaviour
     }
     public void mentes()
     {
-        spawnPont.GetComponentInChildren<SpriteRenderer>().sprite = on;
+        spawnPont = last;
         Save.SetActive(false);
-        takeDamage();
-        savedHP = health;
-        spawnPont.transform.position = transform.position;
         Time.timeScale = 1;
+        if(health > 1) takeDamage();
+        else
+        {
+            Death();
+            return;
+        }
+        spawnPont.GetComponentInChildren<SpriteRenderer>().sprite = on;
+        spawnPont.transform.position = transform.position;
+        savedHP = health;
     }
     public void Buyhealth()
     {

@@ -37,7 +37,7 @@ public class PickupController : MonoBehaviour
             Destroy(col.gameObject);
             colliding = true;
             StartCoroutine("wait");
-            GetComponent<HealthConroller>().addHealth();
+            GetComponent<HealthConroller>().takeDamage();
         }
         
     }

@@ -69,12 +69,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemyskin: {fileID: 4296733352649241694}
-  Coins: []
-  Hearth: {fileID: 0}
-  maxHP: 2
+  Coins:
+  - {fileID: 1856659161059189362, guid: 055423126fd6eed429c787ee7a5dd057, type: 3}
+  - {fileID: 1856659161059189362, guid: 14d4b9f3db93b454a949a63cbf45f6c2, type: 3}
+  Hearth: {fileID: 2744918712294689747, guid: fb4a41cc819b17b41af3e7322c6b4d47, type: 3}
+  maxHP: 3
   currentHP: 0
-  villog: 0
-  spawnedObjects: 0
+  villog: 0.05
+  spawnedObjects: 3
 --- !u!114 &6791302174519721827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,10 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15081109f64b87a42a32cf9c98f05530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Skin: {fileID: 0}
-  x1: 0
-  x2: 0
-  speed: 2
+  Skin: {fileID: 6819053527305547768}
+  x1: -26.2
+  x2: -22.7
+  speed: 0.4
 --- !u!61 &850027774130933491
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -104,7 +106,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08896744, y: 0}
+  m_Offset: {x: 0.19902802, y: 0.005538106}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -115,7 +117,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1779349, y: 2}
+  m_Size: {x: 0.60194397, y: 0.8147862}
   m_EdgeRadius: 0
 --- !u!1 &6159096075752101344
 GameObject:
@@ -144,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 6159096075752101344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 850027774130933493}
   m_RootOrder: 0
@@ -186,8 +188,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2373106096299296214, guid: ed104d62c3645604ab70b0d5aaff6a55,
+  m_SortingOrder: 10
+  m_Sprite: {fileID: -2723320419700246248, guid: dde07d6a7ddd58a4693913c7d62a724e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -209,7 +211,7 @@ Animator:
   m_GameObject: {fileID: 6159096075752101344}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a9588df7da0329a4d9ffc3587ceea7cf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

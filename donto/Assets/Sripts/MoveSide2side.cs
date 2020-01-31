@@ -27,6 +27,6 @@ public class MoveSide2side : MonoBehaviour
             facingRight = !facingRight;
             Skin.localScale = new Vector3(Skin.localScale.x*-1,Skin.localScale.y,Skin.localScale.z);
         }
-        Skin.localScale = new Vector3(Skin.localScale.x*-1,Skin.localScale.y,Skin.localScale.z);
+        
     }
 }
