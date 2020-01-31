@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Barrel
+  - sword
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -14,12 +16,12 @@ TagManager:
   - UI
   - 
   - 
-  - Background
-  - 
-  - 
-  - 
-  - 
-  - 
+  - ground
+  - Enemies
+  - Enitis
+  - sword
+  - character
+  - coins
   - 
   - 
   - 
